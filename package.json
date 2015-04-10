@@ -1,15 +1,17 @@
 {
-  "name": "fizzbuzz-coverage",
+  "name": "fizzbuzz-coverage-shippable",
   "version": "0.0.0",
-  "description": "Fizzbuzz with travis integration, test coverage, and style checking",
+  "description": "Fizzbuzz with integrated testing and coverage by shippable",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha ./test/*",
-    "test-travis": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- -R spec ./test/*"
+    "shippable-cobertura": "istanbul report cobertura --dir shippable/codecoverage/",
+    "test": "mocha ./test/*",
+    "test-shippable": "mkdir -p shippable/testresults && mocha --reporter xunit ./test/* > shippable/testresults/result.xml",
+    "test-coverage": "istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec ./test/*"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/vkarpov15/fizzbuzz-coverage"
+    "url": "git://github.com/vkarpov15/fizzbuzz-coverage-shippable"
   },
   "devDependencies": {
     "acquit": "0.0.3",
