@@ -1,7 +1,7 @@
 {
   "name": "fizzbuzz-coverage-shippable",
   "version": "0.0.0",
-  "description": "Fizzbuzz with integrated testing and coverage by shippable",
+  "description": "Fizzbuzz with integrated testing and coverage by Shippable",
   "main": "index.js",
   "scripts": {
     "shippable-cobertura": "istanbul report cobertura --dir shippable/codecoverage/",
